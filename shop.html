@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh mục sản phẩm — NOVA-SHOP</title>
+    <meta
+      name="description"
+      content="Khám phá toàn bộ sản phẩm âm thanh, đèn bàn kiến trúc, phụ kiện bàn làm việc và đồng hồ tại NOVA-SHOP."
+    />
+    <meta property="og:title" content="Danh mục sản phẩm — NOVA-SHOP" />
+    <meta
+      property="og:description"
+      content="Khám phá toàn bộ sản phẩm âm thanh, đèn bàn kiến trúc, phụ kiện bàn làm việc và đồng hồ tại NOVA-SHOP."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/nova-mark.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body data-page="shop">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-wordmark">NOVA SHOP</a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a>
+          <a href="shop.html" class="nav-link" data-i18n="nav.shop">Cửa hàng</a>
+          <a href="cart.html" class="nav-link" data-i18n="nav.cart">Giỏ hàng</a>
+          <a href="checkout.html" class="nav-link" data-i18n="nav.checkout">Thanh toán</a>
+        </nav>
+
+        <div class="header-actions">
+          <label for="lang-switcher" class="sr-only" data-i18n="header.langAria">Chọn ngôn ngữ</label>
+          <select id="lang-switcher" class="lang-select" data-i18n-aria="header.langAria" aria-label="Chọn ngôn ngữ">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇬🇧 English</option>
+          </select>
+
+          <button
+            type="button"
+            class="bag-trigger"
+            id="header-bag-btn"
+            data-i18n-aria="header.bagAria"
+            aria-label="Mở giỏ hàng"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M6 7h12l1 13H5L6 7z" />
+              <path d="M9 7V6a3 3 0 0 1 6 0v1" />
+            </svg>
+            <span><span data-i18n="header.bag">Giỏ</span> (<span class="tabular-nums" data-bag-count>0</span>)</span>
+          </button>
+
+          <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobile-menu-toggle"
+            data-i18n-aria="header.menuAria"
+            aria-label="Mở menu điều hướng"
+            aria-expanded="false"
+            aria-controls="mobile-nav-panel"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link" data-i18n="nav.home">Trang chủ</a>
+      <a href="shop.html" class="nav-link" data-i18n="nav.shop">Cửa hàng</a>
+      <a href="cart.html" class="nav-link" data-i18n="nav.cart">Giỏ hàng</a>
+      <a href="checkout.html" class="nav-link" data-i18n="nav.checkout">Thanh toán</a>
+    </nav>
+
+    <main class="site-main">
+      <section class="page-banner">
+        <div class="container page-banner-inner">
+          <div>
+            <p class="section-kicker" data-i18n="shop.kicker">Danh mục đầy đủ</p>
+            <h1 class="page-title" data-i18n="shop.title">Bộ Sưu Tập Studio</h1>
+            <p class="page-subtitle" data-i18n="shop.subtitle">
+              Lọc theo danh mục, chất liệu hoặc mức giá. Chọn từng sản phẩm để xem thông số và phiên bản màu.
+            </p>
+          </div>
+          <span id="shop-result-count" class="catalog-count">6 sản phẩm</span>
+        </div>
+      </section>
+
+      <section class="section section--compact" aria-label="Product Catalog">
+        <div class="container">
+          <div class="shop-toolbar">
+            <div id="category-filter-tabs" class="filter-tabs" role="group" aria-label="Lọc theo danh mục"></div>
+
+            <div class="shop-controls">
+              <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+                <label for="shop-search-input" class="sr-only" data-i18n="shop.searchLabel">Tìm kiếm sản phẩm</label>
+                <input
+                  id="shop-search-input"
+                  class="search-input"
+                  type="search"
+                  data-i18n-placeholder="shop.searchPlaceholder"
+                  placeholder="Tìm tên sản phẩm, chất liệu, mã SKU..."
+                  autocomplete="off"
+                />
+                <button
+                  type="button"
+                  id="shop-search-clear"
+                  class="search-clear"
+                  data-i18n-aria="shop.searchClearAria"
+                  aria-label="Xóa từ khóa tìm kiếm"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <label for="shop-price-select" class="sr-only" data-i18n="shop.priceLabel">Mức giá tối đa</label>
+              <select id="shop-price-select" class="price-select">
+                <option value="all" data-i18n="shop.priceAll">Tất cả mức giá</option>
+                <option value="150" data-i18n="shop.price150">Dưới $150</option>
+                <option value="200" data-i18n="shop.price200">Dưới $200</option>
+                <option value="300" data-i18n="shop.price300">Dưới $300</option>
+              </select>
+
+              <label for="shop-sort-select" class="sr-only" data-i18n="shop.sortLabel">Sắp xếp sản phẩm</label>
+              <select id="shop-sort-select" class="sort-select">
+                <option value="featured" data-i18n="shop.sortFeatured">Sắp xếp: Nổi bật</option>
+                <option value="price-asc" data-i18n="shop.sortPriceAsc">Giá: Thấp đến Cao</option>
+                <option value="price-desc" data-i18n="shop.sortPriceDesc">Giá: Cao đến Thấp</option>
+                <option value="rating" data-i18n="shop.sortRating">Đánh giá cao nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="shop-product-grid" class="product-grid" data-testid="shop-grid"></div>
+
+          <div id="shop-empty-state" class="empty-state" hidden>
+            <h2 data-i18n="shop.emptyTitle">Không tìm thấy sản phẩm phù hợp</h2>
+            <p data-i18n="shop.emptyDesc">Hãy thử xóa từ khóa tìm kiếm hoặc chuyển về tất cả danh mục.</p>
+            <button type="button" id="reset-filters-btn" class="btn btn-primary" data-i18n="shop.resetBtn">Đặt lại bộ lọc</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-wordmark">NOVA SHOP</span>
+          <p class="footer-copy" data-i18n="footer.copy">&copy; 2026 NOVA-SHOP Thiết Bị Tối Giản. Bảo lưu mọi quyền.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav.home">Trang chủ</a>
+          <a href="shop.html" data-i18n="nav.shop">Cửa hàng</a>
+          <a href="cart.html" data-i18n="nav.cart">Giỏ hàng</a>
+          <a href="checkout.html" data-i18n="nav.checkout">Thanh toán</a>
+        </div>
+      </div>
+    </footer>
+
+    <dialog id="product-detail-dialog" class="product-dialog" aria-label="Chi tiết sản phẩm"></dialog>
+
+    <div id="bag-drawer-backdrop" class="drawer-backdrop"></div>
+    <aside
+      id="bag-drawer"
+      class="bag-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bag-drawer-title"
+      aria-hidden="true"
+    >
+      <div class="drawer-header">
+        <h2 id="bag-drawer-title" class="drawer-title" data-i18n="drawer.title">Giỏ hàng</h2>
+        <button type="button" id="close-bag-drawer" class="drawer-close" data-i18n-aria="drawer.closeAria" aria-label="Đóng giỏ hàng">
+          &times;
+        </button>
+      </div>
+      <div id="drawer-items-list" class="drawer-body"></div>
+      <div class="drawer-footer">
+        <div class="drawer-subtotal-row">
+          <span data-i18n="drawer.subtotal">Tạm tính</span>
+          <span id="drawer-subtotal" class="tabular-nums">$0.00</span>
+        </div>
+        <div class="drawer-actions">
+          <a href="cart.html" class="btn btn-secondary" data-i18n="drawer.viewCart">Xem giỏ hàng</a>
+          <a href="checkout.html" id="drawer-checkout-link" class="btn btn-primary" data-i18n="drawer.checkout">Thanh toán</a>
+        </div>
+      </div>
+    </aside>
+
+    <div id="toast-banner" class="toast-banner" role="status" aria-live="polite"></div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

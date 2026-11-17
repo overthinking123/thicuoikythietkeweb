@@ -1,0 +1,13 @@
+{
+  "name": "nova-shop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node scripts/verify-project.js",
+    "lint": "node scripts/verify-project.js",
+    "test": "node --test tests/shop.test.js"
+  }
+}
